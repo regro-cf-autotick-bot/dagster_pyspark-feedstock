@@ -1,5 +1,5 @@
 {% set name = "dagster_pyspark" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 71d5c21a5628ef61b520f604809003546f4bb8a7d2f928940dc4bfb9fef1692d
+  sha256: 67b6a8d4cc3af52a6a3c3e1c1085668b0d257288f14575cd411a5482211b357a
 
 build:
   number: 0
