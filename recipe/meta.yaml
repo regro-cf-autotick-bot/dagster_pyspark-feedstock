@@ -1,18 +1,18 @@
 {% set name = "dagster_pyspark" %}
-{% set version = "0.6.4" %}
+{% set version = "0.7.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 71d5c21a5628ef61b520f604809003546f4bb8a7d2f928940dc4bfb9fef1692d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
+  sha256: a76d579407efd91254b5d5d7e8eec20959b699e836ad363cc4be5083f292e7c8
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,11 +30,11 @@ test:
     - dagster_pyspark
 
 about:
-  home: "https://github.com/dagster-io/dagster/tree/master/python_modules/dagster-framework/pyspark"
+  home: https://github.com/dagster-io/dagster/tree/master/python_modules/dagster-framework/pyspark
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: "Package for PySpark Dagster framework components."
+  summary: Package for PySpark Dagster framework components.
 
 extra:
   recipe-maintainers:
